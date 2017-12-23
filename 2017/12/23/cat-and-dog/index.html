@@ -187,7 +187,7 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>In the project, a classifier of SVM(Support Vector Machine) and a classifier of CNN(Convolutional Neural Network) using transfer learning will be explored to experiment the accuracy of automatically classifying the image set of cats and dogs.  </p>
+        <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>In the note, a classifier of SVM(Support Vector Machine) and a classifier of CNN(Convolutional Neural Network) using transfer learning will be explored to experiment the accuracy of automatically classifying the image set of cats and dogs.  </p>
 <h4 id="Method-One"><a href="#Method-One" class="headerlink" title="Method One"></a>Method One</h4><p>For the first method, an SVM classifier was trained to classify the images by families(family dog or family cat). SIFT will be applied to extracted the features from each image in the training set. Then the bag of word model will be applied to create a dictionary for these extracted features. This dictionary is formed by a clustering algorithm K-means. One cluster of features is viewed as a visual word in this dictionary. After the dictionary is created, images are represented by frequency vectors which represent the proportion of features belong to a visual word. Then, a SVM classifier is trained based on these frequency features.  </p>
 <h4 id="Method-Two"><a href="#Method-Two" class="headerlink" title="Method Two"></a>Method Two</h4><p>For the second method, we used CNN model to extracted features from the images. For this project, keras application are used. These applications are deep learning models with pre-trained weights. They can be used for prediction, feature extraction and fine tuning. The ResNet50, InceptionV3 and Xception model are used for extracting features from the images. Then these features will be used to trained a CNN model.  </p>
 <h4 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h4><p>The data set for this project is the provided by Microsoft Research and Kaggle. The training set consists of 25,000 images with half cat images and half dog images. The training set contains 12,500 images without labels. The size of these images are about $350\times 350$.<br>After downloading the image set from Kaggle, the images are separated into two folder, one for cat images, one for dog images. For dogs, the corresponding label is 1, for cats, the corresponding label is 0. The sample images in the data set are shown in the <strong><em>Figure 1</em></strong>.<br><img src="/images/catAndDog.png" alt="data set images">“Figure 1: images in data set”</p>
@@ -201,6 +201,13 @@
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
+        
+            <li class="next">
+                <a href= "/2017/12/23/Word-Embedding-Syntactics-or-Semantics/" title= Word Embedding: Syntactics or Semantics >
+                    <span>Next Post</span>
+                    <span>Word Embedding: Syntactics or Semantics</span>
+                </a>
+            </li>
         
         
             <li class="previous">
@@ -308,7 +315,36 @@
     
     
     
-    <div class="total-archive"> Total : 2 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 5 </div>
     
     <div class="post-archive">
     
@@ -334,6 +370,21 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Word-Embedding-Syntactics-or-Semantics/" >Word Embedding: Syntactics or Semantics</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Sharing-On-Campus-Web-Application/" >Sharing On Campus: Web Application</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Duke-Gather-Android-Application/" >Duke Gather: Android Application</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/cat-and-dog/" >cat-and-dog</a>
         </li>
     
@@ -341,6 +392,8 @@
   </div>
         <div class="sidebar-tags">
     <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">machine learning, natural language processing</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">machine learning</a></span>
     

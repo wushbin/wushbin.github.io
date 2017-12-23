@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wushbin.github.io/"/>
-  <updated>2017-12-23T13:41:29.969Z</updated>
+  <updated>2017-12-23T13:49:30.688Z</updated>
   <id>https://wushbin.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Sharing On Campus: Web Application</title>
-    <link href="https://wushbin.github.io/2017/12/23/Sharing-On-Campus-Web-Application/"/>
-    <id>https://wushbin.github.io/2017/12/23/Sharing-On-Campus-Web-Application/</id>
-    <published>2017-12-23T13:41:29.000Z</published>
-    <updated>2017-12-23T13:41:29.969Z</updated>
+    <link href="https://wushbin.github.io/2017/10/12/Sharing-On-Campus-Web-Application/"/>
+    <id>https://wushbin.github.io/2017/10/12/Sharing-On-Campus-Web-Application/</id>
+    <published>2017-10-12T13:41:29.000Z</published>
+    <updated>2017-12-23T13:49:30.688Z</updated>
     
     <summary type="html">
     
@@ -32,28 +32,10 @@
   
   <entry>
     <title>Word Embedding: Syntactics or Semantics</title>
-    <link href="https://wushbin.github.io/2017/12/23/Word-Embedding-Syntactics-or-Semantics/"/>
-    <id>https://wushbin.github.io/2017/12/23/Word-Embedding-Syntactics-or-Semantics/</id>
-    <published>2017-12-23T13:39:09.000Z</published>
-    <updated>2017-12-23T13:46:23.582Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="machine learning" scheme="https://wushbin.github.io/tags/machine-learning/"/>
-    
-      <category term="natural language processing" scheme="https://wushbin.github.io/tags/natural-language-processing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>word_embedding</title>
-    <link href="https://wushbin.github.io/2017/12/23/word-embedding/"/>
-    <id>https://wushbin.github.io/2017/12/23/word-embedding/</id>
-    <published>2017-12-23T13:35:38.000Z</published>
-    <updated>2017-12-23T13:46:44.183Z</updated>
+    <link href="https://wushbin.github.io/2017/10/09/Word-Embedding-Syntactics-or-Semantics/"/>
+    <id>https://wushbin.github.io/2017/10/09/Word-Embedding-Syntactics-or-Semantics/</id>
+    <published>2017-10-09T13:39:09.000Z</published>
+    <updated>2017-12-23T13:49:53.526Z</updated>
     
     <summary type="html">
     
@@ -68,10 +50,10 @@
   
   <entry>
     <title>cat-and-dog</title>
-    <link href="https://wushbin.github.io/2017/12/23/cat-and-dog/"/>
-    <id>https://wushbin.github.io/2017/12/23/cat-and-dog/</id>
-    <published>2017-12-23T12:42:35.000Z</published>
-    <updated>2017-12-23T13:46:48.098Z</updated>
+    <link href="https://wushbin.github.io/2017/05/02/cat-and-dog/"/>
+    <id>https://wushbin.github.io/2017/05/02/cat-and-dog/</id>
+    <published>2017-05-02T12:42:35.000Z</published>
+    <updated>2017-12-23T13:49:09.193Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>In the note, a classifier of SVM(Support Vector Machine) and a classifier of CNN(Convolutional Neural Network) using transfer learning will be explored to experiment the accuracy of automatically classifying the image set of cats and dogs.  </p><h4 id="Method-One"><a href="#Method-One" class="headerlink" title="Method One"></a>Method One</h4><p>For the first method, an SVM classifier was trained to classify the images by families(family dog or family cat). SIFT will be applied to extracted the features from each image in the training set. Then the bag of word model will be applied to create a dictionary for these extracted features. This dictionary is formed by a clustering algorithm K-means. One cluster of features is viewed as a visual word in this dictionary. After the dictionary is created, images are represented by frequency vectors which represent the proportion of features belong to a visual word. Then, a SVM classifier is trained based on these frequency features.  </p><h4 id="Method-Two"><a href="#Method-Two" class="headerlink" title="Method Two"></a>Method Two</h4><p>For the second method, we used CNN model to extracted features from the images. For this project, keras application are used. These applications are deep learning models with pre-trained weights. They can be used for prediction, feature extraction and fine tuning. The ResNet50, InceptionV3 and Xception model are used for extracting features from the images. Then these features will be used to trained a CNN model.  </p><h4 id="Data-Set"><a href="#Data-Set" class="headerlink" title="Data Set"></a>Data Set</h4><p>The data set for this project is the provided by Microsoft Research and Kaggle. The training set consists of 25,000 images with half cat images and half dog images. The training set contains 12,500 images without labels. The size of these images are about $350\times 350$.<br>After downloading the image set from Kaggle, the images are separated into two folder, one for cat images, one for dog images. For dogs, the corresponding label is 1, for cats, the corresponding label is 0. The sample images in the data set are shown in the <strong><em>Figure 1</em></strong>.<br><img src="/images/catAndDog.png" alt="data set images">“Figure 1: images in data set”</p><h3 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h3><h4 id="Method-One-Traditional-Machine-Learning-Approach"><a href="#Method-One-Traditional-Machine-Learning-Approach" class="headerlink" title="Method One: Traditional Machine Learning Approach"></a>Method One: Traditional Machine Learning Approach</h4><p>For traditional image classification problems, features extracted by human are chosen to train classifiers. Then feature descriptors are use to represent the images. SIFT, HoG, RGB and HSV are the common features that are used to represent images.<br>For this project, SIFT are used to extracted the features and compute the feature descriptors. Because we know that the shapes of images of cat and dog are different with each other. Features extracted by SIFT will play an important role in the classification of the image set.<br>After implementing the SIFT algorithms to extract features, we get the features descriptors of all the images in the training set. K-means clustering algorithms is applied to generate a dictionary of visual words for the features descriptors in the training set. All the images are then represented by by frequency vectors which represent the proportion of features belong to a visual word.<br>Based on the frequency vectors generated by the BOW method, a SVM classifier was trained to make classification. The visualize process of this method is shown in the <strong><em>Figure 2</em></strong>.<br><img src="/images/SIFT_proc.jpeg" alt="method one">“Figure 2: Process of Method One”</p><p><a href="https://github.com/wushbin/DogAndCat/blob/master/catVsDog.ipynb" target="_blank" rel="noopener">Source code for this method</a><br>The accuracy of this method is about $62\%$ when the images were compressed to $128 \times 128$, which is quite dissatisfactory for a binary classification problem. While when the images were compressed to $256 \times 256$, the accuracy only increase to $65.46\%$.<br><img src="/images/sift_result.png" alt="method one result">“Result using Method One”</p><h4 id="Method-Two-Deep-Neural-Netword-CNN-with-transfer-learning"><a href="#Method-Two-Deep-Neural-Netword-CNN-with-transfer-learning" class="headerlink" title="Method Two: Deep Neural Netword(CNN with transfer learning)"></a>Method Two: Deep Neural Netword(CNN with transfer learning)</h4><p><em>Method two is refer to Peiwen Yang’s Post in Zhihu</em>.  </p><p>In Method Two, image features will be extracted by a Convolutional Neural Network model. After that, we can simply use dropout to classify the validation set and test set. Compared with the feature extraction by SIFT, convolutional neural network learn features from the images.<br>Several pre-trained model in keras application are used in this method to learn the features from the cat and dog image set. The ResNet50, InceptionV3 and Xception models are chosen to learn the features,which are object detection model in image recognition provided by keras. The weights of these models are pre-trained on ImageNet.<br>In order to improve the performance of the classification model, these three models are used together to learn the features from the images. These three models build up a huge network. If a fully connected layer is added directly after this huge network to train the classification model, the computation cost will be extremely large. Thus, the features extraction and classifier training are conducted separately. The pre-trained models are used to extract features. And then, these features are used to train the classifier.<br>For the trainning process, a simple neural network was used as the classification model, this model includes an input layer, a hidden layer with dropout rate $0.5$, and an output layer with sigmoid as activation function. The features number learned by each model is 2048, and then 6144 features was learned from the feature extraction process. The number of nodes in the input layer is 6144. For the hidden layer, there is also 6144 nodes, but they are not fully connected because dropout was applied in this layer. For the output layer, there is only 1 node because it is a binary classification problem.\newline<br>With fine features learning by pre-trained models, a simple model can make a good classification. The visualized process of this model is shown is <strong><em>Figure 3</em></strong>.<br><img src="/images/cnnModel.jpeg" alt="method two">“Figure 3: Model of Method Two”</p><p><a href="https://github.com/wushbin/DogAndCat/blob/master/cnnCatVsDog.ipynb" target="_blank" rel="noopener">Source code for this method</a> </p><p><img src="/images/cnn_result.png" alt="method two result">“Result using Method two”<br>In addition, the cost time of feature extraction for each model(ResNet50, InceptionV3 and Xception) is less than 20 minutes, which is also more efficient than the method one. Moreover, it only take less than 10 minutes to train the classifier.   </p>]]></content>
     

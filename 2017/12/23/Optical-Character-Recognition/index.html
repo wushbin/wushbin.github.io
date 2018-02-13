@@ -246,7 +246,7 @@ test accuracy 0.9927
 <h4 id="Experiment-of-Self-Written-Digits-Image"><a href="#Experiment-of-Self-Written-Digits-Image" class="headerlink" title="Experiment of Self-Written Digits Image"></a>Experiment of Self-Written Digits Image</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'test_digit4.png'</span>, cv2.IMREAD_COLOR)</span><br><span class="line">img = cv2.cvtColor( img, cv2.COLOR_RGB2GRAY )</span><br><span class="line">im_gray = cv2.GaussianBlur(img, (<span class="number">5</span>, <span class="number">5</span>), <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">5</span>))</span><br><span class="line">plt.imshow(im_gray, cmap = <span class="string">'gray'</span>, interpolation = <span class="string">'bicubic'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img src="/images/Optical-Character-Recognition/output_18_2.png" alt="png"></p>
+<p><img src="/images/Optical-Character-Recognition/output_18_0_2.png" alt="png"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blur_img = cv2.GaussianBlur(img, (<span class="number">5</span>,<span class="number">5</span>), <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ret,thresh = cv2.threshold(img,<span class="number">127</span>,<span class="number">255</span>,cv2.THRESH_BINARY_INV)</span><br><span class="line">im2, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL , cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line">rects = [cv2.boundingRect(contour) <span class="keyword">for</span> contour <span class="keyword">in</span> contours]</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.imshow(thresh, cmap = <span class="string">'gray'</span>, interpolation = <span class="string">'bicubic'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
@@ -554,11 +554,11 @@ test accuracy 0.9927
         <div class="sidebar-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name"><a href= "#">machine learning</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Mobile Application</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">machine learning</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">natural language processing</a></span>
     

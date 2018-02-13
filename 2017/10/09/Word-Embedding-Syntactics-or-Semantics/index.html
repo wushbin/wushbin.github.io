@@ -262,7 +262,67 @@
 <p>From the result of similar words above, we can see that the PPMI do a good job in searching similar words for the given inputs. The similar words getting from PPMI are all relevant to the input word. There are some interesting output such as the output the ‘good’, the most similar word except itself is ‘bad’. Although We may think that these two words are opposite but not similar, for the given content these two words are used in most similar surrounding. That is to say they are syntactically similar. Thus, the PPMI will treat them as similar. The word embedding from PPMI matrix capture both the syntactic and semantic meaning of a word.<br>After the similarity experiment, analogy experiment was also perform by using the word embeding from PPMI. An analogy question— “man is to woman as king is to <em>__</em>”, where the goal of this analogy task is to fill in the blank space.<br>This question can be solved by finding a word whose word embedding is most closest to </p>
 <p><script type="math/tex">w_{woman} - w_{man} + w_{king}</script>.<br>The result for this problem using cosine similarity and PPMI is as below.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;man to woman&apos; is similar as &apos;king to prince&apos;</span><br><span class="line">&apos;boy to girl&apos; is similar as &apos;king to queen&apos;</span><br><span class="line">&apos;beijing to china&apos; is similar as &apos;paris to france&apos;</span><br><span class="line">&apos;king to queen&apos; is similar as &apos;ibm to microsoft&apos;</span><br><span class="line">&apos;korea to seoul&apos; is similar as &apos;thailand to bangkok&apos;</span><br></pre></td></tr></table></figure></p>
 <p>It seems that, the PPMI does a good job in the problem except the first analogy. Then, an experiment through a test file which contains more than 5585 analogy samples to text the accurary of analogy is conducted. After a long time computation, the accuracy of PPMI in analogy is as below. It only get $41.6\%$ accuracy in this analogy test. It seems that the accuracy of word analogy by PPMI word embedding is quite low. Besides, the computation complexity of this 10000* 10000 matrix is very high, which makes the process slow dowm.  </p>
-<h4 id="Result-of-Dense-vector-via-SVD"><a href="#Result-of-Dense-vector-via-SVD" class="headerlink" title="Result of Dense vector via SVD"></a>Result of Dense vector via SVD</h4><p>In this part, SVD is applied to decomposite the co-occurrence matrix in order to get a short and dense vector for word embedding. The plot of the singular value in this SVD decomposition is show as below.<br>| imput     | output(top 10 most similar words in PPMI)     |<br>|——————-    |——————————————————————————————————————————————————————    |<br>| ‘water’     | ‘water’, ‘liquid’, ‘oxygen’, ‘gas’, ‘fuel’, ‘fluid’, ‘soil’, ‘drainage’, ‘sand’, ‘waste’     |<br>| ‘boy’     | ‘boy’, ‘girl’, ‘kid’, ‘baby’, ‘man’, ‘crazy’, ‘woman’, ‘dog’, ‘cat’, ‘daddy’     |<br>| ‘apple’     | ‘apple’, ‘microsoft’, ‘ibm’, ‘linux’, ‘proprietary’, ‘os’, ‘compatible’, ‘processor’, ‘console’, ‘sony’     |<br>| ‘fruit’     | ‘fruit’, ‘fruits’, ‘flowers’, ‘vegetables’, ‘meat’, ‘corn’, ‘wheat’, ‘flower’, ‘seeds’, ‘milk’     |<br>| ‘cat’     | ‘cat’, ‘dog’, ‘rabbit’, ‘monkey’, ‘pig’, ‘rat’, ‘cow’, ‘duck’, ‘cats’, ‘frog’     |<br>| ‘beautiful’     | ‘beautiful’, ‘pretty’, ‘wonderful’, ‘attractive’, ‘lonely’, ‘nice’, ‘magnificent’, ‘sweet’, ‘funny’, ‘sad’     |<br>| ‘good’     | ‘good’, ‘bad’, ‘excellent’, ‘better’, ‘poor’, ‘nice’, ‘sure’, ‘wrong’, ‘my’, ‘wonderful’     |<br>| ‘many’     | ‘many’, ‘several’, ‘numerous’, ‘some’, ‘other’, ‘various’, ‘including’, ‘these’, ‘such’, ‘few’     |<br>| ‘blue’     | ‘blue’, ‘red’, ‘yellow’, ‘purple’, ‘black’, ‘pink’, ‘white’, ‘green’, ‘orange’, ‘colored’     |<br>| ‘play’     | ‘play’, ‘playing’, ‘plays’, ‘played’, ‘compete’, ‘perform’, ‘sing’, ‘participate’, ‘players’, ‘game’     |<br>| ‘try’     | ‘try’, ‘trying’, ‘tried’, ‘tries’, ‘attempting’, ‘attempt’, ‘able’, ‘attempts’, ‘help’, ‘attempted’     |<br>| ‘walk’     | ‘walk’, ‘walking’, ‘walks’, ‘walked’, ‘climb’, ‘swim’, ‘ride’, ‘throw’, ‘sit’, ‘wait’     |<br>From the result, we can see that co-occurrence matrix with SVD also get a well job in searching the similar words. \newline<br>After the similarity experiment, analogy experiment was also perform by using the word embedding from truncated co-occurrence matrix.<br>The result for this problem using cosine similarity and Dense vector is as below.<br>From the result, we can see that the dense vector perform well in this analogy problem. It gets the right result for the analogy problem given.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;man to woman&apos; is similar as &apos;king to queen&apos;</span><br><span class="line">&apos;boy to girl&apos; is similar as &apos;king to queen&apos;</span><br><span class="line">&apos;beijing to china&apos; is similar as &apos;paris to france&apos;</span><br><span class="line">&apos;king to queen&apos; is similar as &apos;ibm to microsoft&apos;</span><br><span class="line">&apos;korea to seoul&apos; is similar as &apos;thailand to bangkok&apos;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Result-of-Dense-vector-via-SVD"><a href="#Result-of-Dense-vector-via-SVD" class="headerlink" title="Result of Dense vector via SVD"></a>Result of Dense vector via SVD</h4><p>In this part, SVD is applied to decomposite the co-occurrence matrix in order to get a short and dense vector for word embedding. The plot of the singular value in this SVD decomposition is show as below.  </p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>imput</th>
+<th>output(top 10 most similar words in PPMI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#39;water&#39;</td>
+<td>&#39;water&#39;, &#39;liquid&#39;, &#39;oxygen&#39;, &#39;gas&#39;, &#39;fuel&#39;, &#39;fluid&#39;, &#39;soil&#39;, &#39;drainage&#39;, &#39;sand&#39;, &#39;waste&#39;</td>
+</tr>
+<tr>
+<td>&#39;boy&#39;</td>
+<td>&#39;boy&#39;, &#39;girl&#39;, &#39;kid&#39;, &#39;baby&#39;, &#39;man&#39;, &#39;crazy&#39;, &#39;woman&#39;, &#39;dog&#39;, &#39;cat&#39;, &#39;daddy&#39;</td>
+</tr>
+<tr>
+<td>&#39;apple&#39;</td>
+<td>&#39;apple&#39;, &#39;microsoft&#39;, &#39;ibm&#39;, &#39;linux&#39;, &#39;proprietary&#39;, &#39;os&#39;, &#39;compatible&#39;, &#39;processor&#39;, &#39;console&#39;, &#39;sony&#39;</td>
+</tr>
+<tr>
+<td>&#39;fruit&#39;</td>
+<td>&#39;fruit&#39;, &#39;fruits&#39;, &#39;flowers&#39;, &#39;vegetables&#39;, &#39;meat&#39;, &#39;corn&#39;, &#39;wheat&#39;, &#39;flower&#39;, &#39;seeds&#39;, &#39;milk&#39;</td>
+</tr>
+<tr>
+<td>&#39;cat&#39;</td>
+<td>&#39;cat&#39;, &#39;dog&#39;, &#39;rabbit&#39;, &#39;monkey&#39;, &#39;pig&#39;, &#39;rat&#39;, &#39;cow&#39;, &#39;duck&#39;, &#39;cats&#39;, &#39;frog&#39;</td>
+</tr>
+<tr>
+<td>&#39;beautiful&#39;</td>
+<td>&#39;beautiful&#39;, &#39;pretty&#39;, &#39;wonderful&#39;, &#39;attractive&#39;, &#39;lonely&#39;, &#39;nice&#39;, &#39;magnificent&#39;, &#39;sweet&#39;, &#39;funny&#39;, &#39;sad&#39;</td>
+</tr>
+<tr>
+<td>&#39;good&#39;</td>
+<td>&#39;good&#39;, &#39;bad&#39;, &#39;excellent&#39;, &#39;better&#39;, &#39;poor&#39;, &#39;nice&#39;, &#39;sure&#39;, &#39;wrong&#39;, &#39;my&#39;, &#39;wonderful&#39;</td>
+</tr>
+<tr>
+<td>&#39;many&#39;</td>
+<td>&#39;many&#39;, &#39;several&#39;, &#39;numerous&#39;, &#39;some&#39;, &#39;other&#39;, &#39;various&#39;, &#39;including&#39;, &#39;these&#39;, &#39;such&#39;, &#39;few&#39;</td>
+</tr>
+<tr>
+<td>&#39;blue&#39;</td>
+<td>&#39;blue&#39;, &#39;red&#39;, &#39;yellow&#39;, &#39;purple&#39;, &#39;black&#39;, &#39;pink&#39;, &#39;white&#39;, &#39;green&#39;, &#39;orange&#39;, &#39;colored&#39;</td>
+</tr>
+<tr>
+<td>&#39;play&#39;</td>
+<td>&#39;play&#39;, &#39;playing&#39;, &#39;plays&#39;, &#39;played&#39;, &#39;compete&#39;, &#39;perform&#39;, &#39;sing&#39;, &#39;participate&#39;, &#39;players&#39;, &#39;game&#39;</td>
+</tr>
+<tr>
+<td>&#39;try&#39;</td>
+<td>&#39;try&#39;, &#39;trying&#39;, &#39;tried&#39;, &#39;tries&#39;, &#39;attempting&#39;, &#39;attempt&#39;, &#39;able&#39;, &#39;attempts&#39;, &#39;help&#39;, &#39;attempted&#39;</td>
+</tr>
+<tr>
+<td>&#39;walk&#39;</td>
+<td>&#39;walk&#39;, &#39;walking&#39;, &#39;walks&#39;, &#39;walked&#39;, &#39;climb&#39;, &#39;swim&#39;, &#39;ride&#39;, &#39;throw&#39;, &#39;sit&#39;, &#39;wait&#39;</td>
+</tr>
+</tbody>
+</table>
+
+<p>From the result, we can see that co-occurrence matrix with SVD also get a well job in searching the similar words. \newline<br>After the similarity experiment, analogy experiment was also perform by using the word embedding from truncated co-occurrence matrix.<br>The result for this problem using cosine similarity and Dense vector is as below.<br>From the result, we can see that the dense vector perform well in this analogy problem. It gets the right result for the analogy problem given.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;man to woman&apos; is similar as &apos;king to queen&apos;</span><br><span class="line">&apos;boy to girl&apos; is similar as &apos;king to queen&apos;</span><br><span class="line">&apos;beijing to china&apos; is similar as &apos;paris to france&apos;</span><br><span class="line">&apos;king to queen&apos; is similar as &apos;ibm to microsoft&apos;</span><br><span class="line">&apos;korea to seoul&apos; is similar as &apos;thailand to bangkok&apos;</span><br></pre></td></tr></table></figure></p>
 <p>As the PPMI model, an experiment through a test file which contains more than 5585 analogy samples to text the accurary of analogy is conducted. The accuracy using dense vector is $54\%$, which is much better than the sparse vector PPMI method.</p>
 <h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>From all the result of the two method, we know that the dense vector method get a better result than the sparse PPMI method in analogy analysis and similar word search. In addition, the computational efficiency of the dense vector is also better than the PPMI. Short vectors may be easier to use as features in machine learning. Dense vectors    may    generalize better than storing explicit counts. In addition, dense vectors may perform better in capturing synonymy than sparse vectors.  </p>
 
@@ -496,12 +556,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
         </li>
     
     

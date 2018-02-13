@@ -202,6 +202,10 @@
 <li>In the tags list and tags set, the tags of start state and end state are added.  </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">sents_list = [t <span class="keyword">for</span> s <span class="keyword">in</span> sents <span class="keyword">for</span> t <span class="keyword">in</span> s]</span><br><span class="line">tags_set = set()</span><br><span class="line">words_set = set()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(sents_list)):</span><br><span class="line">    tags_set.add(sents_list[i][<span class="number">1</span>])</span><br><span class="line">    words_set.add(sents_list[i][<span class="number">0</span>])</span><br><span class="line">tags_list = list(tags_set)</span><br><span class="line">words_list = list(words_set)</span><br><span class="line"></span><br><span class="line"><span class="comment">## add the start and end state</span></span><br><span class="line">tags_list.insert(<span class="number">0</span>, <span class="string">'START_STATE'</span>)</span><br><span class="line">tags_list.insert(len(tags_list), <span class="string">'END_STATE'</span>)</span><br><span class="line"></span><br><span class="line">tags_hash = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> index, tag <span class="keyword">in</span> enumerate(tags_list):</span><br><span class="line">    tags_hash[tag] = index</span><br><span class="line">words_hash = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> index, word <span class="keyword">in</span> enumerate(words_list):</span><br><span class="line">    words_hash[word] = index</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Tags after compressing:"</span>)</span><br><span class="line">print(tags_hash)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tags after compressing:<br>{‘START_STATE’: 0, ‘NPS’: 1, ‘WPO’: 2, ‘PPLS’: 3, ‘BEN’: 4, ‘NNS’: 5, ‘BER’: 6, ‘VBN’: 7, ‘CS’: 8, ‘TO’: 9, ‘DTX’: 10, ‘)’: 11, ‘,’: 12, ‘NP’: 13, ‘VBD’: 14, ‘FW’: 15, ‘PP$$’: 16, ‘JJR’: 17, ‘WPS’: 18, ‘OD’: 19, ‘QLP’: 20, ‘AT’: 21, ‘EX’: 22, ‘CC’: 23, ‘HVD’: 24, ‘PPS’: 25, ‘PP$’: 26, ‘NR$’: 27, ‘``’: 28, ‘QL’: 29, ‘JJS’: 30, ‘BE’: 31, ‘HVN’: 32, ‘PN$’: 33, ‘ABN’: 34, ‘NN$’: 35, ‘AP’: 36, ‘NNS$’: 37, ‘RB$’: 38, ‘VBZ’: 39, ‘NR’: 40, ‘PPL’: 41, ‘NP$’: 42, ‘DT$’: 43, ‘BEDZ’: 44, ‘RBT’: 45, ‘MD’: 46, ‘DT’: 47, ‘NN’: 48, ‘ABL’: 49, ‘BEM’: 50, ‘BED’: 51, ‘AP$’: 52, ‘HV’: 53, ‘(‘: 54, ‘WDT’: 55, ‘DTS’: 56, ‘RP’: 57, ‘VBG’: 58, ‘HVG’: 59, ‘NPS$’: 60, ‘BEZ’: 61, ‘JJT’: 62, ‘.’: 63, “‘’”: 64, ‘DOZ’: 65, ‘ABX’: 66, ‘CD’: 67, ‘DOD’: 68, ‘RB’: 69, ‘DO’: 70, ‘BEG’: 71, ‘RBR’: 72, “‘“: 73, ‘—‘: 74, ‘PPSS’: 75, ‘WQL’: 76, ‘*’: 77, ‘IN’: 78, ‘VB’: 79, ‘PPO’: 80, ‘HVZ’: 81, ‘WP$’: 82, ‘WRB’: 83, ‘PN’: 84, ‘CD$’: 85, ‘JJ’: 86, ‘UH’: 87, ‘DTI’: 88, ‘:’: 89, ‘END_STATE’: 90}</p>
+</blockquote>
 
     </article>
     <!-- 前后页  -->
@@ -433,12 +437,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
         </li>
     
     

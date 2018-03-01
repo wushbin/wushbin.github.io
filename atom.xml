@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wushbin.github.io/"/>
-  <updated>2018-03-01T21:04:44.112Z</updated>
+  <updated>2018-03-01T21:15:30.988Z</updated>
   <id>https://wushbin.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My Understanding of Kernel in SVM</title>
+    <link href="https://wushbin.github.io/2018/03/01/kernel/"/>
+    <id>https://wushbin.github.io/2018/03/01/kernel/</id>
+    <published>2018-03-01T21:15:04.000Z</published>
+    <updated>2018-03-01T21:15:30.988Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Support Vector Machine Implementation With Python</title>

@@ -229,9 +229,13 @@ f(x_{new}) & = \sum_j^p \lambda_j^{\star}x_{new(j)} + \lambda_0\\
 & = \sum_i^n \alpha_i^{\star}y_i \sum_j^p x_{i,j} x_{new(j)} + \lambda_0^{\star}\\
 & = \sum_i^n \alpha_i^{\star}y_i \langle \mathbf{x_i}, \mathbf{x_{new}}\rangle_{\mathcal{H_k}} + \lambda_0^{\star}\\
 & = \sum_i^n \alpha_i^{\star}y_i k(\mathbf{x_i}, \mathbf{x_{new}}) + \lambda_0^{\star}\\
-\end{align}</script><p>For this equation, we know that we just need to know the inner product value of $x$ in the new feature space to make a prediction.<br>Thus, for the SVM using Gaussian kernel, all we need is the value of two vector in the Gaussian kernel. </p>
+\end{align}</script><p>We know that we just need to know the inner product value of $x$ in the new feature space to make a prediction.<br>Thus, for the SVM using Gaussian kernel, all we need is the value of two vector in the Gaussian kernel. Then we can use this inner product value to solve the Lagrangian and make prediction. </p>
 <h4 id="Soft-Margin"><a href="#Soft-Margin" class="headerlink" title="Soft Margin"></a>Soft Margin</h4><p>The Primal problem of SVM is </p>
-<script type="math/tex; mode=display">min_{\lambda, \lambda_0} \frac{1}{2}||\lambda||^2_2 + C\sum_{i=1}^n \xi_i</script><p>s.t.$\begin{cases}<br>y_i(\lambda^Tx_i + \lambda_0) \geq  1 - \xi_i\<br>\xi_i \geq 0\end{cases}$<br>The Lagrangian form of this prime is</p>
+<script type="math/tex; mode=display">min_{\lambda, \lambda_0} \frac{1}{2}||\lambda||^2_2 + C\sum_{i=1}^n \xi_i</script><script type="math/tex; mode=display">s.t. 
+\begin{cases}
+y_i(\lambda^Tx_i + \lambda_0) \geq  1 - \xi_i\\
+\xi_i \geq 0 \text{ } \forall i\\
+\end{cases}</script><p>The Lagrangian form of this prime is</p>
 <script type="math/tex; mode=display">\mathcal{L}([\lambda, \lambda_0], \xi, \alpha, \gamma) = \frac{1}{2} \sum_{j=1}^p \lambda_j^2 + C\sum_{i=1}^n \xi_i -\sum_{i=1}^n \alpha_i[y_i(\lambda^Tx_i + \lambda_0) - 1 + \xi_i] - \sum_{i=1}^n \gamma_i\xi_i</script><p>The Dual problem is </p>
 <script type="math/tex; mode=display">max_{\alpha}\mathcal{L}(\alpha) = \sum_{i=1}^n\alpha_i - \frac{1}{2}\sum_{i,j}\alpha_i\alpha_ky_iy_kx_i^Tx_k</script><script type="math/tex; mode=display">s.t. \begin{cases}
 0 \leq \alpha_i \leq C \text{  }\forall i \\
@@ -542,6 +546,12 @@ y_ny_1k(\mathbf{x_n}, \mathbf{x_1}) & \dots & y_ny_nk(\mathbf{x_n}, \mathbf{x_n}
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-archive"> Total : 14 </div>
     
     <div class="post-archive">
@@ -588,12 +598,12 @@ y_ny_1k(\mathbf{x_n}, \mathbf{x_1}) & \dots & y_ny_nk(\mathbf{x_n}, \mathbf{x_n}
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
         </li>
     
     
@@ -660,11 +670,11 @@ y_ny_1k(\mathbf{x_n}, \mathbf{x_1}) & \dots & y_ny_nk(\mathbf{x_n}, \mathbf{x_n}
     
         <span class="sidebar-tag-name"><a href= "#">Mobile Application</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">natural language processing</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">mechanical design</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">experiment</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">natural language processing</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">

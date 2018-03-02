@@ -234,7 +234,7 @@ f(x_{new}) & = \sum_j^p \lambda_j^{\star}x_{new(j)} + \lambda_0\\
 <script type="math/tex; mode=display">min_{\lambda, \lambda_0} \frac{1}{2}||\lambda||^2_2 + C\sum_{i=1}^n \xi_i</script><p>s.t.$\begin{cases}<br>y_i(\lambda^Tx_i + \lambda_0) \geq  1 - \xi_i\<br>\xi_i \geq 0\end{cases}$<br>The Lagrangian form of this prime is</p>
 <script type="math/tex; mode=display">\mathcal{L}([\lambda, \lambda_0], \xi, \alpha, \gamma) = \frac{1}{2} \sum_{j=1}^p \lambda_j^2 + C\sum_{i=1}^n \xi_i -\sum_{i=1}^n \alpha_i[y_i(\lambda^Tx_i + \lambda_0) - 1 + \xi_i] - \sum_{i=1}^n \gamma_i\xi_i</script><p>The Dual problem is </p>
 <script type="math/tex; mode=display">max_{\alpha}\mathcal{L}(\alpha) = \sum_{i=1}^n\alpha_i - \frac{1}{2}\sum_{i,j}\alpha_i\alpha_ky_iy_kx_i^Tx_k</script><script type="math/tex; mode=display">s.t. \begin{cases}
-0 \leq \alpha_i \geq C \text{  }\forall i \\
+0 \leq \alpha_i \leq C \text{  }\forall i \\
 \sum_{i=1}^n \alpha_iy_i = 0\\
 \end{cases}</script><p>The only difference is $\leq \alpha_i \geq C \text{  }\forall i$. To solve the quadratic problem, all we need to change is the matrix $\mathbf{P}$, $\mathbf{G}$ and $\mathbf{h}$. </p>
 <script type="math/tex; mode=display">
@@ -522,6 +522,26 @@ y_ny_1k(\mathbf{x_n}, \mathbf{x_1}) & \dots & y_ny_nk(\mathbf{x_n}, \mathbf{x_n}
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-archive"> Total : 14 </div>
     
     <div class="post-archive">
@@ -568,12 +588,12 @@ y_ny_1k(\mathbf{x_n}, \mathbf{x_1}) & \dots & y_ny_nk(\mathbf{x_n}, \mathbf{x_n}
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/Optical-Character-Recognition/" >Optical Character Recognition</a>
+            <span class="archive-post-date">12/23</span><a class="archive-post-title" href= "/2017/12/23/PacMan-Game-Artificial-Intellegence/" >PacMan Game: Artificial Intellegence</a>
         </li>
     
     
@@ -640,11 +660,11 @@ y_ny_1k(\mathbf{x_n}, \mathbf{x_1}) & \dots & y_ny_nk(\mathbf{x_n}, \mathbf{x_n}
     
         <span class="sidebar-tag-name"><a href= "#">Mobile Application</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">natural language processing</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">mechanical design</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">experiment</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">natural language processing</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
